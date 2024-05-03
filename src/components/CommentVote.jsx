@@ -1,1 +1,5 @@
-export default CommentVote
+function CommentVotes(){
+
+}
+
+export default CommentVotes
