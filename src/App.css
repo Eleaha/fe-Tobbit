@@ -1,6 +1,7 @@
 :root {
 	--text-dark: #220c72;
 	--accent-light: #ffe5e5;
+	--accent-dark: #ffb3b3;
 	--accent-secondary-light: #f8c596;
 	--main-dark: #c5d86d;
 	--main-light: #eff9c1;
@@ -14,6 +15,7 @@
 	margin: 0;
 	font-size: 16px;
 	color: var(--text-dark);
+	box-sizing: border-box;
 }
 
 header {
@@ -63,7 +65,47 @@ header button:hover {
 	transition: 0.5s;
 }
 
-
 html {
 	background-color: var(--main-light);
+}
+
+h1 {
+	font-size: 2rem;
+	margin: 2% 5%;
+}
+
+h2 {
+	font-family: var(--serif);
+	font-size: 1.5rem;
+	font-weight: bolder;
+	line-height: 1.5rem;
+	margin-bottom: 0.8rem;
+}
+
+h3 {
+	font-family: var(--sans-serif);
+}
+
+#article-list {
+	display: flex;
+	flex-direction: column;
+	list-style: none;
+	margin: ;
+}
+
+.article-card {
+	box-sizing: border-box;
+	padding: 5%;
+	background-color: var(--accent-light);
+	width: 90%;
+	margin: 0.5rem auto;
+	border-radius: 2rem;
+	border: 0.2rem solid var(--accent-dark);
+}
+
+.article-img {
+	display: block;
+	width: 100%;
+	margin: auto;
+	border-radius: 0.2rem;
 }

@@ -1,3 +1,5 @@
-function Article() {}
+function Article() {
+
+}
 
 export default Article;
