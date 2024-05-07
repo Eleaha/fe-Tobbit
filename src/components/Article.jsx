@@ -20,6 +20,7 @@ function Article({setIsLoading, isLoading}) {
             setIsLoading(false)
         });
     }, [])
+    console.log(article.votes)
 
 	return (
         isLoading ? (
@@ -30,7 +31,7 @@ function Article({setIsLoading, isLoading}) {
 				<h1 className="article-title">{article.title}</h1>
 				<h2 className="article-username">{article.author}</h2>
 				<h3 className="article-date">{date}</h3>
-				<ArticleVotes />
+				<ArticleVotes votes={article.votes}/>
 			</section>
             <img src={article.article_img_url} className='article-img'/>
 			<section className="article-body">

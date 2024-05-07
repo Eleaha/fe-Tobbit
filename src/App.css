@@ -135,6 +135,19 @@ article p {
 	float: left;
 	font-size: 4rem;
 	line-height: 2.7rem;
-	/* margin: 0.1em 0.1em 0.2em 0; */
 	padding: 0.1em;
+}
+
+.material-symbols-outlined {
+	font-size: 2.5rem;
+}
+
+.outlined {
+	font-size: 2.5rem;
+	font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+}
+
+.filled {
+	font-size: 2.5rem;
+	font-variation-settings: 'FILL' 1, 'wght' 300, 'GRAD' 0, 'opsz' 24;
 }
