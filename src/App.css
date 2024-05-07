@@ -1,0 +1,69 @@
+:root {
+	--text-dark: #220c72;
+	--accent-light: #ffe5e5;
+	--accent-secondary-light: #f8c596;
+	--main-dark: #c5d86d;
+	--main-light: #eff9c1;
+	--like-color: #e6745b;
+	--serif: 'EB Garamond', serif;
+	--sans-serif: 'Teachers', sans-serif;
+}
+
+* {
+	padding: 0;
+	margin: 0;
+	font-size: 16px;
+	color: var(--text-dark);
+}
+
+header {
+	height: 50px;
+	width: 100vw;
+	background-color: var(--main-dark);
+	color: var(--text-dark);
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	box-shadow: 0 0.01rem 10px rgba(21, 13, 51, 30%);
+}
+
+header h1 {
+	font-family: var(--serif);
+	font-weight: 700;
+	font-size: 2rem;
+	cursor: pointer;
+}
+
+button {
+	border: none;
+	cursor: pointer;
+	color: var(--text-dark);
+}
+
+header button {
+	margin: 0 3%;
+	padding: 0.5rem;
+	font-weight: 500;
+	background-color: var(--main-light);
+	font-family: var(--sans-serif);
+	border-radius: 0.4rem;
+	transition: 0.1s;
+}
+
+header button:active {
+	background-color: var(--text-dark);
+	color: var(--accent-light);
+	transition: 0s;
+}
+
+header button:hover {
+	background-color: var(--main-dark);
+	border-radius: 100%;
+	transition: 0.5s;
+}
+
+
+html {
+	background-color: var(--main-light);
+}
