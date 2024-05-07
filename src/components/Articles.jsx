@@ -1,21 +1,26 @@
 import { useEffect, useState } from 'react';
-import allArticles from '../../api';
+import { allArticles } from '../../api';
 import ArticleCard from './ArticleCard';
+import Loading from './Loading';
 
-function Articles() {
+function Articles({ setIsLoading, isLoading }) {
 	const [articles, setArticles] = useState([]);
 
 	useEffect(() => {
-		allArticles.then(( {data} ) => {
-			setArticles(data.articles)
+        setIsLoading(true)
+		allArticles.then(({ data }) => {
+			setArticles(data.articles);
+			setIsLoading(false);
 		});
-	}, []);
+	}, [articles]);
 
-	return (
-		<section>
+	return isLoading ? (
+		<div><Loading /></div>
+	) : (
+		<section className="route">
 			<ul id="article-list">
 				{articles.map((article) => {
-					return (<ArticleCard article={article}/>);
+					return <ArticleCard key={article.article_id} article={article} />;
 				})}
 			</ul>
 		</section>
