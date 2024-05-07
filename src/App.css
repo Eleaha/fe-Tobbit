@@ -106,16 +106,16 @@ p {
 #article-list {
 	display: flex;
 	flex-direction: column;
-	list-style: none;
 }
 
-.article-card {
+.card {
 	box-sizing: border-box;
 	padding: 5%;
 	background-color: var(--accent-light);
 	margin: 0.5rem auto;
 	border-radius: 2rem;
 	border: 0.2rem solid var(--accent-dark);
+	list-style: none;
 }
 
 .article-img {
@@ -129,7 +129,7 @@ article p {
  margin-top: 1rem;
 }
 
-article p::first-letter{
+.article-body::first-letter{
 	font-family: var(--serif);
 	float: left;
   font-size: 4rem;

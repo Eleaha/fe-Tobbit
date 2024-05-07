@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 function ArticleCard({ article }) {
 	return (
 		<Link to={`/article/${article.article_id}`} className="link">
-			<li className="article-card">
+			<li className="article-card card">
 				<h1>{article.title}</h1>
 				<h2>{article.author}</h2>
 				<h3>{article.created_at}</h3>

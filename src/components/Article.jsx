@@ -36,7 +36,7 @@ function Article({setIsLoading, isLoading}) {
 			<section className="article-body">
 				<p>{article.body}</p>
 			</section>
-			<CommentSection />
+			<CommentSection articleId={article_id}/>
 		</article>
 	)
 }
