@@ -4,6 +4,7 @@ import ArticleCard from './ArticleCard';
 import Loading from './Loading';
 
 function Articles({ setIsLoading, isLoading }) {
+	
 	const [articles, setArticles] = useState([]);
 
 	useEffect(() => {

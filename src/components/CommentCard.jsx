@@ -1,4 +1,6 @@
 import { timestampToDate } from "../../utils"
+import { patchVotesByCommentId } from "../../api"
+import Votes from "./Votes"
 
 function CommentCard({comment}){
     return (
@@ -6,7 +8,7 @@ function CommentCard({comment}){
             <h2>{comment.author}</h2>
             <h3>{timestampToDate(comment.created_at)}</h3>
             <p>{comment.body}</p>
-            <h3>❤{comment.votes}</h3>
+            <Votes className="comment-votes" votes={comment.votes} id={comment.comment_id} patchFunction={patchVotesByCommentId}/>
         </li>
     )
 }

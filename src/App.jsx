@@ -1,6 +1,5 @@
 import { Routes, Route } from 'react-router';
 import './App.css';
-
 import Articles from './components/Articles';
 import Topic from './components/Topic';
 import Article from './components/Article';

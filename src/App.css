@@ -48,6 +48,7 @@ button {
 	border: none;
 	cursor: pointer;
 	color: var(--text-dark);
+	background-color: transparent;
 }
 
 header button {
@@ -138,8 +139,14 @@ article p {
 	padding: 0.1em;
 }
 
+.vote-wrapper {
+	background: transparent;
+}
+
 .material-symbols-outlined {
 	font-size: 2.5rem;
+	color: var(--like-color);
+	padding: 0;
 }
 
 .outlined {
