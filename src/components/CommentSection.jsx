@@ -14,8 +14,8 @@ useEffect(() => {
 }, [comments])
 
     return (
-			<section>
-				<h2>Comments</h2>
+			<section className="comment-section">
+				<h1 className="comments-title">Comments</h1>
                 <PostComment setComments={setComments}/>
                 <ul>
                 {comments.map((comment) => {

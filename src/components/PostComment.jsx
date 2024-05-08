@@ -13,7 +13,7 @@ function PostComment({setComments}) {
 	function handleSubmit(e) {
 		e.preventDefault();
         setIsError(false)
-		if (!e.target[0]) {
+		if (!e.target[0].value) {
 			setValidForm(false);
 		} else {
 
@@ -47,19 +47,19 @@ function PostComment({setComments}) {
     }
 
 	return (
-		<form className="card" onSubmit={handleSubmit}>
-			<h3>New comment here</h3>
+		<form className="submit-comment-card card" onSubmit={handleSubmit}>
+			<h2>Add a comment</h2>
 			<textarea
-            disabled={isPosting}
-				placeholder="your thoughts and feelings go here..."
+				disabled={isPosting}
+				placeholder="Your thoughts and feelings go here..."
 				value={currentComment}
 				onChange={handleChange}
 				onBlur={handleBlur}
 			></textarea>
-			{!validForm && <p>You can't post a blank comment!</p>}
-            {isPosting && <p>posting comment...</p>}
-            {isError && <p>Something went wrong! Please try again</p>}
-			<button>Submit</button>
+			<button id="submit-comment-button">Submit</button>
+			{isPosting && <p>posting comment...</p>}
+			{isError && <p>Something went wrong! Please try again</p>}
+			{!validForm && <p>You can't post a blank comment...</p>}
 		</form>
 	);
 }
