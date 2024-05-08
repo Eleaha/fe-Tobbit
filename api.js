@@ -20,6 +20,13 @@ function getCommentsByArticleID(articleId) {
 		});
 }
 
+function postComment(commentToPost, articleId) {
+	return axios.post(
+		`https://tobbit.onrender.com/api/articles/${articleId}/comments`,
+		commentToPost
+	);
+}
+
 function patchVotesByArticleId(voteChange, articleId) {
 	return axios.patch(`https://tobbit.onrender.com/api/articles/${articleId}`, {
 		inc_votes: voteChange,
@@ -38,4 +45,5 @@ export {
 	getCommentsByArticleID,
 	patchVotesByArticleId,
 	patchVotesByCommentId,
+	postComment,
 };
