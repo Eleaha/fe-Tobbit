@@ -1,13 +1,19 @@
-import { Routes, Route } from 'react-router';
+import { Routes, Route, useLocation } from 'react-router';
+import { useState, useLayoutEffect } from 'react';
 import './App.css';
 import Articles from './components/Articles';
 import Topic from './components/Topic';
 import Article from './components/Article';
 import Header from './components/Header';
-import { useState } from 'react';
 
 function App() {
 	const [isLoading, setIsLoading] = useState(true);
+
+	const location = useLocation();
+
+	useLayoutEffect(() => {
+		document.documentElement.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+	}, [location.pathname]);
 
 	return (
 		<main>

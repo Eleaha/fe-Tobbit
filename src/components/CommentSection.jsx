@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { getCommentsByArticleID } from "../../api";
 import CommentCard from "./CommentCard";
+import PostComment from "./PostComment";
 
 function CommentSection({articleId}){
 
@@ -10,14 +11,15 @@ useEffect(() => {
     getCommentsByArticleID(articleId).then(({data}) => {
         setComments(data.comments)
     })
-}, [])
+}, [comments])
 
     return (
-			<section>
-				<h2>Comments</h2>
+			<section className="comment-section">
+				<h1 className="comments-title">Comments</h1>
+                <PostComment setComments={setComments}/>
                 <ul>
                 {comments.map((comment) => {
-                    return <CommentCard comment={comment} key={comment.comment_id}/>
+                    return <CommentCard comment={comment} key={comment.comment_id} />
                 })}
                 </ul>
 			</section>
