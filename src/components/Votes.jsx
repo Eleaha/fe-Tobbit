@@ -62,13 +62,17 @@ function Votes({ votes, id, patchFunction }) {
 	return (
 		<div className="vote-wrapper">
 			<h3>{voteCount}</h3>
-			<button onClick={handleLikeClick}>
-				<span className={`material-symbols-outlined ${likeFill}`}>
+			<button className="like-or-dislike-button" onClick={handleLikeClick}>
+				<span
+					className={`material-symbols-outlined ${likeFill} like-or-dislike-symbol`}
+				>
 					favorite
 				</span>
 			</button>
-			<button onClick={handleDislikeClick}>
-				<span className={`material-symbols-outlined ${dislikeFill}`}>
+			<button className="like-or-dislike-button" onClick={handleDislikeClick}>
+				<span
+					className={`material-symbols-outlined ${dislikeFill} like-or-dislike-symbol`}
+				>
 					heart_broken
 				</span>
 			</button>

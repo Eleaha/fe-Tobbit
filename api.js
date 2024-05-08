@@ -27,6 +27,10 @@ function postComment(commentToPost, articleId) {
 	);
 }
 
+function deleteComment(commentId) {
+	return axios.delete(`https://tobbit.onrender.com/api/comments/${commentId}`);
+}
+
 function patchVotesByArticleId(voteChange, articleId) {
 	return axios.patch(`https://tobbit.onrender.com/api/articles/${articleId}`, {
 		inc_votes: voteChange,
@@ -46,4 +50,5 @@ export {
 	patchVotesByArticleId,
 	patchVotesByCommentId,
 	postComment,
+	deleteComment,
 };

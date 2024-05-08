@@ -1,39 +1,43 @@
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import { useParams } from 'react-router-dom';
 import { postComment } from '../../api';
+import { UserContext } from '../contexts/User';
 
-function PostComment({setComments}) {
+function PostComment({ setComments }) {
 	const [currentComment, setCurrentComment] = useState('');
 	const [validForm, setValidForm] = useState(true);
 	const [isPosting, setIsPosting] = useState(false);
-    const [isError, setIsError]= useState(false)
+	const [isError, setIsError] = useState(false);
 
-    const {article_id} = useParams()
+	const { user } = useContext(UserContext);
+
+	const { article_id } = useParams();
 
 	function handleSubmit(e) {
 		e.preventDefault();
-        setIsError(false)
+		setIsError(false);
 		if (!e.target[0].value) {
 			setValidForm(false);
 		} else {
-
 			const commentToPost = {
-				username: 'grumpy19',
+				username: user,
 				body: e.target[0].value,
 			};
 
-            setIsPosting(true)
-			postComment(commentToPost, article_id).then(({data}) => {
-                setIsPosting(false)
-                setCurrentComment('')
-                setComments((current) => {
-                    return [...current, data.comment]
-                })
-            }).catch((e) =>{
-                console.log(e)
-                setIsPosting(false)
-                setIsError(true)
-            })
+			setIsPosting(true);
+			postComment(commentToPost, article_id)
+				.then(({ data }) => {
+					setIsPosting(false);
+					setCurrentComment('');
+					setComments((current) => {
+						return [data.comment, ...current];
+					});
+				})
+				.catch((e) => {
+					console.log(e);
+					setIsPosting(false);
+					setIsError(true);
+				});
 		}
 	}
 
@@ -42,9 +46,7 @@ function PostComment({setComments}) {
 		setCurrentComment(e.target.value);
 	}
 
-    function handleBlur(){
-
-    }
+	function handleBlur() {}
 
 	return (
 		<form className="submit-comment-card card" onSubmit={handleSubmit}>
