@@ -37,11 +37,10 @@ function Article({ setIsLoading, isLoading }) {
 					id={article.article_id}
 					patchFunction={patchVotesByArticleId}
 				/>
-				{/* <ArticleVotes votes={article.votes}/> */}
 			</section>
 			<img src={article.article_img_url} className="article-img" />
 			<section className="article-body">
-				<p>{article.body}</p>
+				<p className="article-body-p">{article.body}</p>
 			</section>
 			<CommentSection articleId={article_id} />
 		</article>
