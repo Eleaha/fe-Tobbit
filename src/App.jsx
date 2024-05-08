@@ -1,6 +1,5 @@
 import { Routes, Route } from 'react-router';
 import './App.css';
-
 import Articles from './components/Articles';
 import Topic from './components/Topic';
 import Article from './components/Article';
@@ -8,8 +7,7 @@ import Header from './components/Header';
 import { useState } from 'react';
 
 function App() {
-
-	const [isLoading, setIsLoading] = useState(true)
+	const [isLoading, setIsLoading] = useState(true);
 
 	return (
 		<main>

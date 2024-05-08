@@ -1,28 +1,27 @@
-import { useParams } from 'react-router-dom';
 import { useState } from 'react';
-import { patchVotesByArticleId } from '../../api';
 
-function ArticleVotes({ votes }) {
-
+function Votes({ votes, id, patchFunction }) {
 	const [liked, setIsLiked] = useState(false);
 	const [disliked, setDisliked] = useState(false);
 	const [likeFill, setLikeFill] = useState('outlined');
 	const [dislikeFill, setDislikeFill] = useState('outlined');
 	const [voteCount, setVoteCount] = useState(votes);
+	const [error, setError] = useState(false);
 
-    const { article_id } = useParams();
-
-	function handlePatchVotes(votes) {
-		patchVotesByArticleId(votes, article_id);
+	function handlePatch(votes) {
+		patchFunction(votes, id).catch(() => {
+			setError(true);
+			setVoteCount((current) => current - votes);
+		});
 	}
-    
-	function handleLikeClick() {
 
+	function handleLikeClick() {
+		setError(false);
 		if (liked) {
 			setIsLiked(false);
 			setLikeFill('outlined');
 			setVoteCount((current) => current - 1);
-			handlePatchVotes(-1);
+			handlePatch(-1);
 		} else {
 			setIsLiked(true);
 			setDisliked(false);
@@ -30,19 +29,21 @@ function ArticleVotes({ votes }) {
 			setDislikeFill('outlined');
 			if (disliked) {
 				setVoteCount((current) => current + 2);
-				handlePatchVotes(2);
+				handlePatch(2);
 			} else {
 				setVoteCount((current) => current + 1);
-				handlePatchVotes(1);
+				handlePatch(1);
 			}
 		}
 	}
+
 	function handleDislikeClick() {
+		setError(false);
 		if (disliked) {
 			setDisliked(false);
 			setDislikeFill('outlined');
 			setVoteCount((current) => current + 1);
-			handlePatchVotes(1);
+			handlePatch(1);
 		} else {
 			setDisliked(true);
 			setIsLiked(false);
@@ -50,10 +51,10 @@ function ArticleVotes({ votes }) {
 			setLikeFill('outlined');
 			if (liked) {
 				setVoteCount((current) => current - 2);
-				handlePatchVotes(-2);
+				handlePatch(-2);
 			} else {
 				setVoteCount((current) => current - 1);
-				handlePatchVotes(-1);
+				handlePatch(-1);
 			}
 		}
 	}
@@ -71,8 +72,9 @@ function ArticleVotes({ votes }) {
 					heart_broken
 				</span>
 			</button>
+			{error && <p>Something went wrong! Please try again</p>}
 		</div>
 	);
 }
 
-export default ArticleVotes;
+export default Votes;
