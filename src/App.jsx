@@ -8,7 +8,6 @@ import Header from './components/Header';
 import TopicSelector from './components/TopicSelector';
 
 function App() {
-	const [isLoading, setIsLoading] = useState(true);
 	const [viewTopics, setViewTopics] = useState(false);
 	const [currentTopic, setCurrentTopic] = useState('');
 
@@ -31,7 +30,7 @@ function App() {
 				<Route
 					path="/"
 					element={
-						<Articles setIsLoading={setIsLoading} isLoading={isLoading} />
+						<Articles />
 					}
 				/>
 				<Route
@@ -41,7 +40,7 @@ function App() {
 				<Route
 					path="article/:article_id"
 					element={
-						<Article setIsLoading={setIsLoading} isLoading={isLoading} />
+						<Article/>
 					}
 				/>
 				<Route />
