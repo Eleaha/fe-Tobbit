@@ -1,31 +1,34 @@
 import { useEffect, useState } from 'react';
-import { allArticles } from '../../api';
-import ArticleCard from './ArticleCard';
 import Loading from './Loading';
+import { getArticles } from '../../api';
+import SortArticles from './SortArticles';
+import ArticleList from './ArticleList';
+import { useSearchParams } from 'react-router-dom';
 
-function Articles({ setIsLoading, isLoading }) {
+function Articles() {
+	const [isLoading, setIsLoading] = useState(false);
 	const [articles, setArticles] = useState([]);
+	const [sortCategory, setSortCategory] = useState('created_at');
+	const [order, setOrder] = useState('desc');
+
+	const [searchParams, setSearchParams] = useSearchParams();
 
 	useEffect(() => {
 		setIsLoading(true);
-		allArticles.then(({ data }) => {
+		setSearchParams({ order, sort_category: sortCategory });
+		getArticles(sortCategory, order).then(({ data }) => {
 			setArticles(data.articles);
 			setIsLoading(false);
 		});
-	}, [articles]);
+	}, [sortCategory, order]);
 
-	return isLoading ? (
-		<div>
-			<Loading />
-		</div>
-	) : (
+	return (
 		<section className="route">
-			<h1>Home</h1>
-			<ul id="article-list">
-				{articles.map((article) => {
-					return <ArticleCard key={article.article_id} article={article} />;
-				})}
-			</ul>
+			<>
+				<h1>Home</h1>
+				<SortArticles setSortCategory={setSortCategory} setOrder={setOrder} />
+				{isLoading ? <Loading /> : <ArticleList articles={articles} />}
+			</>
 		</section>
 	);
 }

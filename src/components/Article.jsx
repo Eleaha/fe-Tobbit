@@ -1,15 +1,16 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import CommentSection from './CommentSection';
+import Votes from './Votes';
+import Loading from './Loading';
 import { getArticleById } from '../../api';
 import { timestampToDate } from '../../utils';
-import Loading from './Loading';
-import Votes from './Votes';
 import { patchVotesByArticleId } from '../../api';
 
-function Article({ setIsLoading, isLoading }) {
+function Article() {
 	const [article, setArticle] = useState('');
 	const [date, setDate] = useState('');
+	const [isLoading, setIsLoading] = useState('');
 
 	const { article_id } = useParams();
 
