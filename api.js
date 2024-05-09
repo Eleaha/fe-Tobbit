@@ -2,11 +2,23 @@ import axios from 'axios';
 
 const instance = axios.create({ baseURL: 'https://tobbit.onrender.com/api' });
 
-const allArticles = instance.get('/articles?limit=100');
+const allArticles = instance.get('/articles', {
+	params: { limit: 100 },
+});
 
 function getArticleById(articleId) {
 	return axios
 		.get(`https://tobbit.onrender.com/api/articles/${articleId}`)
+		.then((response) => {
+			return response;
+		});
+}
+
+function getArticlesByTopic(topic) {
+	return axios
+		.get('https://tobbit.onrender.com/api/articles', {
+			params: { topic, limit: 100 },
+		})
 		.then((response) => {
 			return response;
 		});
@@ -43,6 +55,14 @@ function patchVotesByCommentId(voteChange, commentId) {
 	});
 }
 
+function getTopics() {
+	return axios
+		.get('https://tobbit.onrender.com/api/topics')
+		.then((response) => {
+			return response;
+		});
+}
+
 export {
 	allArticles,
 	getArticleById,
@@ -51,4 +71,6 @@ export {
 	patchVotesByCommentId,
 	postComment,
 	deleteComment,
+	getTopics,
+	getArticlesByTopic,
 };

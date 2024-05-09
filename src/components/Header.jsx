@@ -1,6 +1,10 @@
 import { Link } from 'react-router-dom';
 
-function Header() {
+function Header({ viewTopics, setViewTopics }) {
+	function viewTopicsToggle() {
+		setViewTopics(!viewTopics);
+	}
+
 	return (
 		<header>
 			<Link to="/" className="link">
@@ -9,7 +13,7 @@ function Header() {
 			<Link to="/" className="link">
 				<h1>Tobbit</h1>
 			</Link>
-			<button>Topics</button>
+			<button onClick={viewTopicsToggle}>Topics</button>
 		</header>
 	);
 }

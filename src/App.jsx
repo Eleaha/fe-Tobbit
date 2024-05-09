@@ -5,9 +5,12 @@ import Articles from './components/Articles';
 import Topic from './components/Topic';
 import Article from './components/Article';
 import Header from './components/Header';
+import TopicSelector from './components/TopicSelector';
 
 function App() {
 	const [isLoading, setIsLoading] = useState(true);
+	const [viewTopics, setViewTopics] = useState(false);
+	const [currentTopic, setCurrentTopic] = useState('');
 
 	const location = useLocation();
 
@@ -17,7 +20,13 @@ function App() {
 
 	return (
 		<main>
-			<Header />
+			<Header viewTopics={viewTopics} setViewTopics={setViewTopics} />
+			<TopicSelector
+				viewTopics={viewTopics}
+				setViewTopics={setViewTopics}
+				currentTopic={currentTopic}
+				setCurrentTopic={setCurrentTopic}
+			/>
 			<Routes>
 				<Route
 					path="/"
@@ -25,9 +34,12 @@ function App() {
 						<Articles setIsLoading={setIsLoading} isLoading={isLoading} />
 					}
 				/>
-				<Route path="/topic" element={<Topic />} />
 				<Route
-					path="/article/:article_id/"
+					path="articles"
+					element={<Topic currentTopic={currentTopic} setCurrentTopic={setCurrentTopic} />}
+				/>
+				<Route
+					path="article/:article_id"
 					element={
 						<Article setIsLoading={setIsLoading} isLoading={isLoading} />
 					}
