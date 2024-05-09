@@ -27,7 +27,7 @@ header {
 	top: 0;
 	height: 50px;
 	width: 100vw;
-	padding: 3%;
+	padding: 10px 3%;
 	background-color: var(--main-dark);
 	color: var(--text-dark);
 	display: flex;
@@ -103,6 +103,38 @@ p {
 
 .link {
 	text-decoration: none;
+}
+
+.topic-nav {
+	position: fixed;
+	height: 100vh;
+	width: 40vw;
+	top: 0;
+	padding: 60px 1rem;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	align-content: flex-start;
+	justify-content: flex-end;
+	background-color: rgba(197, 216, 109, 60%);
+	transition: 0.6s;
+	backdrop-filter: blur(10px);
+	box-shadow: 0 0.01rem 10px rgba(21, 13, 51, 30%);
+}
+
+.view-true {
+	right: 0;
+}
+
+.view-false {
+	right: -50vw;
+}
+
+.topic-button {
+	font-size: 1.5rem;
+	background: var(--text-dark);
+	color: var(--accent-light);
+	margin: 0.3rem;
 }
 
 #article-list {
