@@ -8,7 +8,7 @@ import DeleteComment from './DeleteComment';
 function CommentCard({ comments, setComments, comment }) {
 	const { user } = useContext(UserContext);
 	return (
-		<li className="card">
+		<li className="comment-card card">
 			<h2>{comment.author}</h2>
 			<h3>{timestampToDate(comment.created_at)}</h3>
 			<p>{comment.body}</p>

@@ -30,7 +30,7 @@ function App() {
 			<Routes>
 				<Route path="/" element={<Articles />} />
 				<Route
-					path="articles"
+					path="/articles"
 					element={
 						<Topic
 							currentTopic={currentTopic}
@@ -38,9 +38,17 @@ function App() {
 						/>
 					}
 				/>
-				<Route path="article/:article_id" element={<Article />} />
+				<Route
+					path="/article/:article_id"
+					element={<Article setCurrentTopic={setCurrentTopic} />}
+				/>
 				<Route />
-				<Route path="*" element={<ErrorPage errorMessage={'Path not found'} errorCode={400}/>} />
+				<Route
+					path="*"
+					element={
+						<ErrorPage errorMessage={'Path not found'} errorCode={400} />
+					}
+				/>
 			</Routes>
 		</main>
 	);

@@ -1,14 +1,15 @@
 import { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
+import { getArticleById } from '../../api';
+import { patchVotesByArticleId } from '../../api';
+import { timestampToDate } from '../../utils';
 import CommentSection from './CommentSection';
 import Votes from './Votes';
 import Loading from './Loading';
 import ErrorPage from './ErrorPage';
-import { getArticleById } from '../../api';
-import { timestampToDate } from '../../utils';
-import { patchVotesByArticleId } from '../../api';
+import TopicButton from './TopicButton';
 
-function Article() {
+function Article({ setCurrentTopic }) {
 	const [article, setArticle] = useState('');
 	const [date, setDate] = useState('');
 	const [isLoading, setIsLoading] = useState('');
@@ -30,20 +31,26 @@ function Article() {
 	}, []);
 
 	return error ? (
-		<ErrorPage errorMessage={'Article not found'} errorCode={error.status}/>
+		<ErrorPage errorMessage={'Article not found'} errorCode={error.status} />
 	) : (
-		<article className="route">
+		<article className="route article">
 			{isLoading ? (
 				<Loading />
 			) : (
 				<section>
 					<h1 className="article-title">{article.title}</h1>
-					<h2 className="article-username">{article.author}</h2>
+					<h2 className="article-username">Written by {article.author}</h2>
 					<h3 className="article-date">{date}</h3>
-					<Votes
-						votes={article.votes}
-						id={article.article_id}
-						patchFunction={patchVotesByArticleId}
+					<div className="article-votes">
+						<Votes
+							votes={article.votes}
+							id={article.article_id}
+							patchFunction={patchVotesByArticleId}
+						/>
+					</div>
+					<TopicButton
+						setCurrentTopic={setCurrentTopic}
+						topic={article.topic}
 					/>
 					<img src={article.article_img_url} className="article-img" />
 					<p className="article-body">{article.body}</p>

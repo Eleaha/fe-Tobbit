@@ -26,9 +26,11 @@ function Articles() {
 		})
 	}, [sortCategory, order]);
 
-	return error? <ErrorPage errorMessage={error.data.msg} errorCode={error.status} /> : (
+	return error ? (
+		<ErrorPage errorMessage={error.data.msg} errorCode={error.status} />
+	) : (
 		<section className="route">
-			<h1>Home</h1>
+			<h1 className="topic-title">Home</h1>
 			<SortArticles setSortCategory={setSortCategory} setOrder={setOrder} />
 			{isLoading ? <Loading /> : <ArticleList articles={articles} />}
 		</section>

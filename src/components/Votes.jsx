@@ -61,7 +61,7 @@ function Votes({ votes, id, patchFunction }) {
 
 	return (
 		<div className="vote-wrapper">
-			<h3>{voteCount}</h3>
+			<h3 className="vote-count">{voteCount}</h3>
 			<button className="like-or-dislike-button" onClick={handleLikeClick}>
 				<span
 					className={`material-symbols-outlined ${likeFill} like-or-dislike-symbol`}

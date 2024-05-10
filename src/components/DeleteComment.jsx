@@ -30,7 +30,7 @@ function DeleteComment({ comments, setComments, commentId }) {
 				onClick={() => setShowDeleteConfirmBox(true)}
 				className="delete-comment-button"
 			>
-				<span className="material-symbols-outlined">delete</span>
+				<span className="material-symbols-outlined trash-icon">delete</span>
 			</button>
 			{showDeleteConfirmBox && (
 				<div className="confirm-delete-wrapper card">

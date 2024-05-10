@@ -43,7 +43,7 @@ function Topic({ currentTopic, setCurrentTopic }) {
 		<ErrorPage errorMessage={'Topic not found'} errorCode={error.status} />
 	) : (
 		<section className="route">
-			<h1>{topicTitle}</h1>
+			<h1 className="topic-title">{topicTitle}</h1>
 			<SortArticles setSortCategory={setSortCategory} setOrder={setOrder} />
 			{isLoading ? <Loading /> : <ArticleList articles={articles} />}
 		</section>
