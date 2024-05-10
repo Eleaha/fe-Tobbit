@@ -6,6 +6,7 @@ import Topic from './components/Topic';
 import Article from './components/Article';
 import Header from './components/Header';
 import TopicSelector from './components/TopicSelector';
+import ErrorPage from './components/ErrorPage';
 
 function App() {
 	const [viewTopics, setViewTopics] = useState(false);
@@ -27,23 +28,19 @@ function App() {
 				setCurrentTopic={setCurrentTopic}
 			/>
 			<Routes>
-				<Route
-					path="/"
-					element={
-						<Articles />
-					}
-				/>
+				<Route path="/" element={<Articles />} />
 				<Route
 					path="articles"
-					element={<Topic currentTopic={currentTopic} setCurrentTopic={setCurrentTopic} />}
-				/>
-				<Route
-					path="article/:article_id"
 					element={
-						<Article/>
+						<Topic
+							currentTopic={currentTopic}
+							setCurrentTopic={setCurrentTopic}
+						/>
 					}
 				/>
+				<Route path="article/:article_id" element={<Article />} />
 				<Route />
+				<Route path="*" element={<ErrorPage errorMessage={'Path not found'} errorCode={400}/>} />
 			</Routes>
 		</main>
 	);

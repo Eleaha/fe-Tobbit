@@ -19,7 +19,7 @@ function TopicSelector({
 
 	return (
 		<nav className={`topic-nav view-${viewTopics.toString()}`}>
-			<Link to="">
+			<Link to="/">
 				<button onClick={(e) => setViewTopics(false)} className="topic-button">
 					All
 				</button>

@@ -14,7 +14,7 @@ function SortArticles({ setSortCategory, setOrder }) {
 		setCurrentSortCategory(e.target.value);
 	}
 
-	function handleClick(e) {
+	function handleClick() {
 		if (currentOrder === 'desc') {
 			setCurrentOrder('asc');
 			setOrder('asc');
