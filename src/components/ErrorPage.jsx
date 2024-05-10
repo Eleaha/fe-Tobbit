@@ -8,7 +8,7 @@ function ErrorPage({errorMessage, errorCode}) {
             <h2>{errorMessage}</h2>
 			<h1>{errorCode}</h1>
             <Link to='/' className='.link'>
-                <h2>Home</h2>
+                <button className="topic-button">Home</button>
             </Link>
 		</section>
 	)

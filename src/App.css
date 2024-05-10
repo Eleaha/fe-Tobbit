@@ -187,7 +187,7 @@ header button:active {
 	box-shadow: 0.1rem 0.01rem 5px rgba(21, 13, 51, 30%);
 }
 
-.article-card-votes{
+.article-card-votes {
 	display: flex;
 	align-items: center;
 	margin: 0.4rem 0;
@@ -231,7 +231,7 @@ header button:active {
 
 .article-title {
 	font-size: 3rem;
-	line-height: 3.5rem;;
+	line-height: 3.5rem;
 	padding-bottom: 1rem;
 	margin-bottom: 1rem;
 	border-bottom: 0.5rem dotted var(--text-dark);
@@ -350,6 +350,21 @@ textarea {
 	flex-direction: row;
 	justify-content: space-between;
 	align-items: flex-end;
+}
+
+.error-page {
+	text-align: center;
+}
+
+.error-page h2 {
+	margin: 1rem;
+}
+
+.loading {
+	margin-top: 4rem;
+	text-align: center;
+	font-size: 2rem;
+	font-weight: bold;
 }
 
 @media only screen and (min-width: 700px) {

@@ -1,4 +1,3 @@
-import styles from './css/articleCard.module.css';
 import { Link } from 'react-router-dom';
 import { timestampToDate } from '../../utils';
 
