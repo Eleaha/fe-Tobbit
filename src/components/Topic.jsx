@@ -4,6 +4,8 @@ import { getArticles } from '../../api';
 import Loading from './Loading';
 import ArticleList from './ArticleList';
 import SortArticles from './SortArticles';
+import ErrorPage from './ErrorPage';
+
 
 function Topic({ currentTopic, setCurrentTopic }) {
 	const [searchParams, setSearchParams] = useSearchParams();
@@ -12,6 +14,7 @@ function Topic({ currentTopic, setCurrentTopic }) {
 	const [isLoading, setIsLoading] = useState(false);
 	const [order, setOrder] = useState('desc');
 	const [sortCategory, setSortCategory] = useState('created_at');
+	const [error, setError] = useState(false);
 
 	useEffect(() => {
 		setIsLoading(true);
@@ -27,13 +30,18 @@ function Topic({ currentTopic, setCurrentTopic }) {
 		getArticles(sortCategory, order, currentTopic).then(({ data }) => {
 			setIsLoading(false);
 			setArticles(data.articles);
-		});
+		}).catch((err) => {
+			console.log(err.response.data.msg)
+			setError(err.response)
+		})
 	}, [currentTopic, searchParams, order, sortCategory]);
 
 	const topicTitle =
 		currentTopic.charAt(0).toUpperCase() + currentTopic.substring(1);
 
-	return (
+	return error ? (
+		<ErrorPage errorMessage={'Topic not found'} errorCode={error.status} />
+	) : (
 		<section className="route">
 			<h1>{topicTitle}</h1>
 			<SortArticles setSortCategory={setSortCategory} setOrder={setOrder} />

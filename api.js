@@ -24,16 +24,6 @@ function getArticleById(articleId) {
 		});
 }
 
-function getArticlesByTopic(topic) {
-	return axios
-		.get('https://tobbit.onrender.com/api/articles', {
-			params: { topic, limit: 100 },
-		})
-		.then((response) => {
-			return response;
-		});
-}
-
 function getCommentsByArticleID(articleId) {
 	return axios
 		.get(`https://tobbit.onrender.com/api/articles/${articleId}/comments`)
@@ -83,5 +73,4 @@ export {
 	postComment,
 	deleteComment,
 	getTopics,
-	getArticlesByTopic,
 };
