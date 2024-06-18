@@ -1,8 +1,43 @@
-# React + Vite
+# Tobbit
+### Tobbit is a lightweight, article based news application that allows users to view, like, dislike and comment on articles that are filterable by topic.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+<https://tobbit.netlify.app/>
 
-Currently, two official plugins are available:
+(Please allow about 30 seconds for content to load for the API host to kick into action!)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+<[https://github.com/Eleaha/Tobbit](Project Backend)>
+
+## Getting set up
+To run the code locally, you'll need to follow a few steps...
+
+### Cloning the repo
+1. Click the fork button at the top of the repo page and follow the instructions to create your own copy
+2. Navigate to the cloned repo on your github
+3. Click the green "code" button at the top left
+4. Copy the url under HTTPS
+5. Open your local terminal or code editor terminal and input the following command
+`git clone https://github.com/***your-username***/Tobbit.git`
+
+## Technologies Needed
+
+Run `npm i` to install dependencies via the package.JSON.
+
+### Dev dependencies
+- @vitejs/plugin-react
+- eslint
+- eslint-plugin-react
+- eslint-plugin-react-hooks
+- eslint-plugin-react-refresh
+- jest
+- vite
+- vitest
+
+### Regular dependencies
+- axios
+- react
+- react-dom
+- react-router
+- react-router-dom
+
+### Minimum version requirements
+- node v21.6.0
