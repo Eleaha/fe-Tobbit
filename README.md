@@ -5,7 +5,7 @@
 
 (Please allow about 30 seconds for content to load for the API host to kick into action!)
 
-<[https://github.com/Eleaha/Tobbit](Project Backend)>
+[Project Backend](https://github.com/Eleaha/Tobbit)
 
 ## Getting set up
 To run the code locally, you'll need to follow a few steps...
