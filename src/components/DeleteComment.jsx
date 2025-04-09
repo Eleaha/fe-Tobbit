@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { deleteComment } from '../../api';
+import PropTypes from 'prop-types';
 
 function DeleteComment({ comments, setComments, commentId }) {
 	const [error, setError] = useState(false);
@@ -49,6 +50,12 @@ function DeleteComment({ comments, setComments, commentId }) {
 			{error && <p>Something went wrong!</p>}
 		</div>
 	);
+}
+
+DeleteComment.propTypes = {
+	comments: PropTypes.arr,
+	setComments: PropTypes.func,
+	commentId: PropTypes.intd
 }
 
 export default DeleteComment;

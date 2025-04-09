@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
-function TopicButton({ setCurrentTopic, topic, setViewTopics = () =>{} }) {
+function TopicButton({ setCurrentTopic, topic, setViewTopics = () => { } }) {
 
 	function handleClick() {
 		setViewTopics(false);
@@ -15,6 +16,12 @@ function TopicButton({ setCurrentTopic, topic, setViewTopics = () =>{} }) {
 			</button>
 		</Link>
 	);
+}
+
+TopicButton.propTypes = {
+	setCurrentTopic: PropTypes.func.isRequired,
+	topic: PropTypes.string.isRequired,
+	setViewTopics: PropTypes.func
 }
 
 export default TopicButton;

@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import PropTypes from 'prop-types';
 
 function SortArticles({ setSortCategory, setOrder }) {
 	const [currentSortCategory, setCurrentSortCategory] = useState('');
@@ -27,7 +28,7 @@ function SortArticles({ setSortCategory, setOrder }) {
 	return (
 		<section className='sort-container'>
 			<h2>Sort</h2>
-			<label htmlFor="order-select"/>
+			<label htmlFor="order-select" />
 			<select id="order-select" className='sort-dropdown' value={currentSortCategory} onChange={handleSortChange}>
 				<option value="created_at">Date posted</option>
 				<option value="comment_count">Number of comments</option>
@@ -42,6 +43,12 @@ function SortArticles({ setSortCategory, setOrder }) {
 			</button>
 		</section>
 	);
+}
+
+SortArticles.propTypes =
+{
+	setSortCategory: PropTypes.func.isRequired,
+	setOrder: PropTypes.func.isRequired
 }
 
 export default SortArticles;

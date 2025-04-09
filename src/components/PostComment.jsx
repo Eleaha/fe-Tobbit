@@ -2,6 +2,7 @@ import { useState, useContext } from 'react';
 import { useParams } from 'react-router-dom';
 import { postComment } from '../../api';
 import { UserContext } from '../contexts/User';
+import PropTypes from 'prop-types';
 
 function PostComment({ setComments }) {
 	const [currentComment, setCurrentComment] = useState('');
@@ -46,7 +47,7 @@ function PostComment({ setComments }) {
 		setCurrentComment(e.target.value);
 	}
 
-	function handleBlur() {}
+	function handleBlur() { }
 
 	return (
 		<form className="submit-comment-card card" onSubmit={handleSubmit}>
@@ -61,9 +62,14 @@ function PostComment({ setComments }) {
 			<button id="submit-comment-button">Submit</button>
 			{isPosting && <p>posting comment...</p>}
 			{isError && <p>Something went wrong! Please try again</p>}
-			{!validForm && <p>You can't post a blank comment...</p>}
+			{!validForm && <p>You can&apos;t post a blank comment...</p>}
 		</form>
 	);
+}
+
+PostComment.propTypes =
+{
+	setComments: PropTypes.func.isRequired
 }
 
 export default PostComment;

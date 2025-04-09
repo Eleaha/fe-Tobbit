@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { timestampToDate } from '../../utils';
+import PropTypes from 'prop-types';
 
 function ArticleCard({ article }) {
 	return (
@@ -24,5 +25,18 @@ function ArticleCard({ article }) {
 		</Link>
 	);
 }
+
+ArticleCard.propTypes = {
+	article: PropTypes.shape({
+		article_id: PropTypes.number,
+		title: PropTypes.string,
+		topic: PropTypes.string,
+		author: PropTypes.string,
+		body: PropTypes.string,
+		votes: PropTypes.number,
+		article_img_url: PropTypes.string,
+		created_at: PropTypes.string,
+	}),
+};
 
 export default ArticleCard;

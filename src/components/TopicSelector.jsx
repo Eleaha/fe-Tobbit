@@ -2,6 +2,7 @@ import TopicButton from './TopicButton';
 import { useState, useEffect } from 'react';
 import { getTopics } from '../../api';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 function TopicSelector({
 	viewTopics,
@@ -20,7 +21,7 @@ function TopicSelector({
 	return (
 		<nav className={`topic-nav view-${viewTopics.toString()}`}>
 			<Link to="/">
-				<button onClick={(e) => setViewTopics(false)} className="topic-button">
+				<button onClick={() => setViewTopics(false)} className="topic-button">
 					All
 				</button>
 			</Link>
@@ -35,6 +36,12 @@ function TopicSelector({
 			))}
 		</nav>
 	);
+}
+TopicSelector.propTypes = {
+	viewTopics: PropTypes.bool.isRequired,
+	setViewTopics: PropTypes.func.isRequired,
+	currentTopic: PropTypes.string.isRequired,
+	setCurrentTopic: PropTypes.func.isRequired
 }
 
 export default TopicSelector;

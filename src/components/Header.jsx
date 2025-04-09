@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 function Header({ viewTopics, setViewTopics }) {
 	function viewTopicsToggle() {
@@ -17,5 +18,12 @@ function Header({ viewTopics, setViewTopics }) {
 		</header>
 	);
 }
+
+Header.propTypes =
+{
+	viewTopics: PropTypes.bool,
+	setViewTopics: PropTypes.func
+}
+
 
 export default Header;
