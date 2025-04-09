@@ -1,10 +1,11 @@
 import { Link } from "react-router-dom";
+import PropTypes from 'prop-types';
 
 function ErrorPage({errorMessage, errorCode}) {
 
 	return (
 		<section className="route error-page">
-			<h1>Uh oh! Something's gone wrong.</h1>
+			<h1>Uh oh! Something has gone wrong.</h1>
             <h2>{errorMessage}</h2>
 			<h1>{errorCode}</h1>
             <Link to='/' className='.link'>
@@ -12,6 +13,11 @@ function ErrorPage({errorMessage, errorCode}) {
             </Link>
 		</section>
 	)
+}
+
+ErrorPage.propTypes = {
+	errorMessage: PropTypes.string,
+	errorCode: PropTypes.number
 }
 
 export default ErrorPage;

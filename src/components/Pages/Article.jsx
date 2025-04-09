@@ -1,13 +1,14 @@
 import { useEffect, useState } from 'react';
-import { useParams, Link } from 'react-router-dom';
-import { getArticleById } from '../../api';
-import { patchVotesByArticleId } from '../../api';
-import { timestampToDate } from '../../utils';
-import CommentSection from './CommentSection';
-import Votes from './Votes';
-import Loading from './Loading';
+import { useParams } from 'react-router-dom';
+import { getArticleById } from '../../../api';
+import { patchVotesByArticleId } from '../../../api';
+import { timestampToDate } from '../../../utils';
+import PropTypes from 'prop-types';
+import CommentSection from '../CommentSection';
+import Votes from '../Votes';
+import Loading from '../Loading';
 import ErrorPage from './ErrorPage';
-import TopicButton from './TopicButton';
+import TopicButton from '../TopicButton';
 
 function Article({ setCurrentTopic }) {
 	const [article, setArticle] = useState('');
@@ -28,7 +29,7 @@ function Article({ setCurrentTopic }) {
 			.catch((err) => {
 				setError(err.response);
 			});
-	}, []);
+	}, [article_id]);
 
 	return error ? (
 		<ErrorPage errorMessage={'Article not found'} errorCode={error.status} />
@@ -60,5 +61,9 @@ function Article({ setCurrentTopic }) {
 		</article>
 	);
 }
+
+Article.propTypes = {
+	setCurrentTopic: PropTypes.func.isRequired
+};
 
 export default Article;

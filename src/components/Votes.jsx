@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import PropTypes from 'prop-types';
 
 function Votes({ votes, id, patchFunction }) {
 	const [liked, setIsLiked] = useState(false);
@@ -79,6 +80,12 @@ function Votes({ votes, id, patchFunction }) {
 			{error && <p>Something went wrong! Please try again</p>}
 		</div>
 	);
+}
+
+Votes.propTypes = {
+	votes: PropTypes.int,
+	id: PropTypes.int,
+	patchFunction: PropTypes.func
 }
 
 export default Votes;

@@ -1,12 +1,12 @@
 import { Routes, Route, useLocation } from 'react-router';
 import { useState, useLayoutEffect } from 'react';
 import './App.css';
-import Articles from './components/Articles';
+import Articles from './components/Pages/Articles';
 import Topic from './components/Topic';
-import Article from './components/Article';
+import Article from './components/Pages/Article';
 import Header from './components/Header';
 import TopicSelector from './components/TopicSelector';
-import ErrorPage from './components/ErrorPage';
+import ErrorPage from './components/Pages/ErrorPage';
 
 function App() {
 	const [viewTopics, setViewTopics] = useState(false);

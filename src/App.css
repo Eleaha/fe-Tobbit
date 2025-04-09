@@ -1,6 +1,6 @@
 :root {
 	--text-dark: #220c72;
-	--accent-light: #ffe5e5;
+	--accent-light: #fffdfb;
 	--accent-dark: #ffb3b3;
 	--accent-secondary-light: #f8c596;
 	--main-dark: #c5d86d;
@@ -137,6 +137,7 @@ header button:active {
 	position: fixed;
 	height: 100vh;
 	width: 40vw;
+	max-width: 300px;
 	top: 0;
 	padding: 60px 1rem;
 	display: flex;
