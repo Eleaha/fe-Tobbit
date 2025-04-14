@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { getArticleById } from "../../../api";
-import { patchVotesByArticleId } from "../../../api";
-import { timestampToDate } from "../../../utils";
+import { getArticleById } from "../../utils/api-interactions";
+import { patchVotesByArticleId } from "../../utils/api-interactions";
+import { timestampToDate } from "../../utils/utils";
 import CommentSection from "../CommentSection";
 import Votes from "../Votes";
 import Loading from "../Loading";

@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { deleteComment } from '../../api';
+import { deleteComment } from '../utils/api-interactions';
 import PropTypes from 'prop-types';
 
 function DeleteComment({ comments, setComments, commentId }) {

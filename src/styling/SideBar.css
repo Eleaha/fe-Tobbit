@@ -1,7 +1,11 @@
 #side-nav-bar {
-    grid-column: 1/1;
-    width: 200px;
-    height: 200px;
-    color: red;
-    z-index: 1000;
+    position: fixed;
+    width: var(--side-bar-width);
+    height: 100vh;
+	padding: 0 var(--standard-padding) var(--standard-padding) var(--standard-padding);
+	border-right: 0.4rem dotted var(--text-dark);
+}
+
+.side-bar-content-wrapper {
+    margin-bottom: var(--standard-padding);
 }

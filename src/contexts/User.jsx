@@ -1,12 +1,22 @@
-import { createContext, useState } from 'react';
+import { createContext, useEffect, useState } from "react";
+import { getUser } from "../utils/api-interactions";
+import PropTypes from "prop-types";
 
 export const UserContext = createContext();
 
 export const UserProvider = ({ children }) => {
-	const [user, setUser] = useState('cooljmessy');
-	return (
-		<UserContext.Provider value={{ user, setUser }}>
-			{children}
-		</UserContext.Provider>
-	);
+    const [username] = useState("cooljmessy");
+    const [user, setUser] = useState();
+
+    useEffect(() => {
+        getUser(username).then(({ data }) => {
+            setUser(data.user);
+        });
+    }, [username]);
+
+    return <UserContext.Provider value={{ user, setUser }}>{children}</UserContext.Provider>;
+};
+
+UserProvider.propTypes = {
+    children: PropTypes.object,
 };

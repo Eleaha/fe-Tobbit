@@ -1,6 +1,6 @@
 import { useContext } from 'react';
-import { timestampToDate } from '../../utils';
-import { patchVotesByCommentId } from '../../api';
+import { timestampToDate } from '../utils/utils';
+import { patchVotesByCommentId } from '../utils/api-interactions';
 import { UserContext } from '../contexts/User';
 import PropTypes from 'prop-types';
 import Votes from './Votes';

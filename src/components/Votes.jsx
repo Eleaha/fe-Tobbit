@@ -83,8 +83,8 @@ function Votes({ votes, id, patchFunction }) {
 }
 
 Votes.propTypes = {
-	votes: PropTypes.int,
-	id: PropTypes.int,
+	votes: PropTypes.number,
+	id: PropTypes.number,
 	patchFunction: PropTypes.func
 }
 

@@ -1,6 +1,7 @@
 import { useState } from "react";
 import PropTypes from "prop-types";
 import { useLocation, useNavigate } from "react-router";
+import "../styling/SortArticles.css";
 
 function SortArticles() {
     const [sortCategory, setSortCategory] = useState("created_at");
@@ -30,7 +31,6 @@ function SortArticles() {
 
     return (
         <section className="sort-container">
-            <h2>Sort</h2>
             <label htmlFor="order-select" />
             <select
                 id="order-select"

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { getTopics } from "../../api";
+import { getTopics } from "../utils/api-interactions";
 import TopicButton from "./TopicButton";
 
 function Topics() {

@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { getCommentsByArticleID } from '../../api';
+import { getCommentsByArticleID } from '../utils/api-interactions';
 import PropTypes from 'prop-types';
 import CommentCard from './CommentCard';
 import PostComment from './PostComment';
@@ -35,7 +35,7 @@ function CommentSection({ articleId }) {
 
 CommentSection.propTypes =
 {
-	articleId: PropTypes.int
+	articleId: PropTypes.number
 }
 
 export default CommentSection;

@@ -1,0 +1,18 @@
+.sort-container {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	height: 2rem;
+}
+
+.sort-dropdown {
+	height: 80%;
+}
+
+.order-symbol {
+	font-size: 2rem;
+}
+
+.order-toggle {
+	padding: 0;
+}

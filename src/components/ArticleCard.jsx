@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
-import { timestampToDate } from '../../utils';
+import { timestampToDate } from '../utils/utils';
 import PropTypes from 'prop-types';
+import "../styling/ArticleCard.css"
 
 function ArticleCard({ article }) {
 	return (
@@ -14,6 +15,10 @@ function ArticleCard({ article }) {
 						favorite
 					</span>
 					<p>{article.votes}</p>
+					<span>
+						comments
+					</span>
+					<p>{article.comment_count}</p>
 				</div>
 				<div className="article-img-wrapper">
 					<img className="article-img" src={article.article_img_url} />
@@ -29,13 +34,13 @@ function ArticleCard({ article }) {
 ArticleCard.propTypes = {
 	article: PropTypes.shape({
 		article_id: PropTypes.number,
+		article_img_url: PropTypes.string,
+		author: PropTypes.string,
+		comment_count: PropTypes.number,
+		created_at: PropTypes.string,
 		title: PropTypes.string,
 		topic: PropTypes.string,
-		author: PropTypes.string,
-		body: PropTypes.string,
 		votes: PropTypes.number,
-		article_img_url: PropTypes.string,
-		created_at: PropTypes.string,
 	}),
 };
 

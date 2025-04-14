@@ -1,20 +1,22 @@
-import { Link } from 'react-router-dom';
-import PropTypes from 'prop-types';
+import { Link } from "react-router-dom";
+import PropTypes from "prop-types";
+import "../styling/Header.css";
+import { useContext } from "react";
+import { UserContext } from "../contexts/User";
 
-function Header({ viewTopics, setViewTopics }) {
-    function viewTopicsToggle() {
-        setViewTopics(!viewTopics);
-    }
-
+function Header() {
+    const { user } = useContext(UserContext);
     return (
         <header>
             <Link to="/articles" className="link">
-                <button>Home</button>
-            </Link>
-            <Link to="/articles" className="link">
                 <h1>Tobbit</h1>
             </Link>
-            <button onClick={viewTopicsToggle}>Topics</button>
+            {user ? (
+                <div className="header-user-info-wrapper">
+                    <p>{user.username}</p>
+                    <img className="header-profile-pic" src={user.avatar_url} />
+                </div>
+            ) : null}
         </header>
     );
 }

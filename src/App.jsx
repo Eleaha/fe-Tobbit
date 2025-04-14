@@ -1,16 +1,13 @@
 import { Routes, Route, useLocation } from 'react-router';
-import { useState, useLayoutEffect } from 'react';
-import './App.css';
+import { useLayoutEffect } from 'react';
 import Articles from './components/Pages/Articles';
 import Article from './components/Pages/Article';
 import Header from './components/Header';
-// import TopicSelector from './components/TopicSelector';
 import ErrorPage from './components/Pages/ErrorPage';
 import SideBar from './components/SideBar';
+import './styling/App.css';
 
 function App() {
-	const [viewTopics, setViewTopics] = useState(false);
-
 	const location = useLocation();
 
 	useLayoutEffect(() => {
@@ -19,26 +16,11 @@ function App() {
 
 	return (
 		<>
-			<Header viewTopics={viewTopics} setViewTopics={setViewTopics} />
-			{/* <TopicSelector
-				viewTopics={viewTopics}
-				setViewTopics={setViewTopics}
-				currentTopic={currentTopic}
-				setCurrentTopic={setCurrentTopic}
-			/> */}
+			<Header />
 			<main>
 				<SideBar />
 				<Routes>
 					<Route path="/articles" element={<Articles />} />
-					{/* <Route
-						path="/articles"
-						element={
-							<Topic
-								currentTopic={currentTopic}
-								setCurrentTopic={setCurrentTopic}
-							/>
-						}
-					/> */}
 					<Route
 						path="/article/:article_id"
 						element={<Article />}

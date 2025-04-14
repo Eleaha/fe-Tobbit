@@ -1,0 +1,93 @@
+:root {
+    --text-dark: #220c72;
+    --accent-light: #fffdfb;
+    --accent-dark: #ffb3b3;
+    --accent-secondary-light: #f8c596;
+    --main-dark: #c5d86d;
+    --main-light: #eff9c1;
+    --like-color: #e6745b;
+
+    --serif: "EB Garamond", serif;
+    --sans-serif: "Teachers", sans-serif;
+
+    --side-bar-width: 250px;
+    --card-width: 800px;
+    --header-height: 50px;
+    --standard-padding: 15px;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    font-size: 16px;
+    color: var(--text-dark);
+    box-sizing: border-box;
+}
+
+html {
+    background-color: var(--main-light);
+}
+
+main {
+    display: grid;
+    grid-template-columns: var(--side-bar-width) 1fr;
+    margin-top: 60px;
+}
+
+h1 {
+    font-family: var(--serif);
+    font-size: 1.8rem;
+    font-weight: 800;
+    line-height: 2rem;
+    margin-bottom: 0.2rem;
+}
+
+h2 {
+    font-family: var(--sans-serif);
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1.5rem;
+    margin-bottom: 0.4rem;
+}
+
+h3 {
+    font-family: var(--sans-serif);
+}
+
+p {
+    font-family: var(--sans-serif);
+    font-weight: 500;
+}
+
+button {
+    border: none;
+    cursor: pointer;
+    color: var(--text-dark);
+    background-color: transparent;
+    font-family: var(--sans-serif);
+    border-radius: 0.4rem;
+    font-weight: 500;
+    padding: 0.5rem;
+    transition: 0.3s;
+}
+
+.link {
+    text-decoration: none;
+}
+
+.route {
+    grid-column-start: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card {
+    box-sizing: border-box;
+    padding: 1rem;
+    background-color: var(--main-light);
+    margin: 0.5rem auto;
+    border-radius: 1rem;
+    list-style: none;
+    box-shadow: 0.1rem 0.01rem 10px var(--main-dark);
+}
