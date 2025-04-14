@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 function ArticleCard({ article }) {
 	return (
 		<Link to={`/article/${article.article_id}`} className="link">
-			<li className="article-card card">
+			<div className="article-card card">
 				<h1>{article.title}</h1>
 				<h2>{article.author}</h2>
 				<h3>{timestampToDate(article.created_at)}</h3>
@@ -21,7 +21,7 @@ function ArticleCard({ article }) {
 						<h2 className="topic-overlay">{article.topic}</h2>
 					</div>
 				</div>
-			</li>
+			</div>
 		</Link>
 	);
 }

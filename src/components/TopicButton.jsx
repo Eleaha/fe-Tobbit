@@ -1,26 +1,27 @@
-import { Link } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
-function TopicButton({ setCurrentTopic, topic, setViewTopics = () => { } }) {
+function TopicButton({ topic }) {
+
+	const navigate = useNavigate()
+	const location = useLocation()
+	const params = new URLSearchParams(location.search)
 
 	function handleClick() {
-		setViewTopics(false);
-		console.log(topic)
-		setCurrentTopic(topic);
+		params.set("topic", topic);
+		navigate(`/articles?${params.toString()}`, { replace: false });
 	}
 
 	return (
-		<Link to="/articles">
-			<button onClick={handleClick} className="topic-button">
-				{topic}
-			</button>
-		</Link>
+		<button onClick={handleClick} className="topic-button">
+			{topic}
+		</button>
 	);
 }
 
 TopicButton.propTypes = {
-	setCurrentTopic: PropTypes.func.isRequired,
-	topic: PropTypes.string.isRequired,
+	setCurrentTopic: PropTypes.func,
+	topic: PropTypes.string,
 	setViewTopics: PropTypes.func
 }
 

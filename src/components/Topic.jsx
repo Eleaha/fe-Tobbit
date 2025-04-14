@@ -35,7 +35,7 @@ function Topic({ currentTopic, setCurrentTopic }) {
 			console.log(err.response.data.msg)
 			setError(err.response)
 		})
-	}, [currentTopic, searchParams, order, sortCategory]);
+	}, []);
 
 	const topicTitle =
 		currentTopic.charAt(0).toUpperCase() + currentTopic.substring(1);

@@ -8,10 +8,10 @@ function Header({ viewTopics, setViewTopics }) {
 
 	return (
 		<header>
-			<Link to="/" className="link">
+			<Link to="/articles" className="link">
 				<button>Home</button>
 			</Link>
-			<Link to="/" className="link">
+			<Link to="/articles" className="link">
 				<h1>Tobbit</h1>
 			</Link>
 			<button onClick={viewTopicsToggle}>Topics</button>

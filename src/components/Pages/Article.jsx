@@ -9,8 +9,9 @@ import Votes from '../Votes';
 import Loading from '../Loading';
 import ErrorPage from './ErrorPage';
 import TopicButton from '../TopicButton';
+import "../../styling/Article.css"
 
-function Article({ setCurrentTopic }) {
+function Article() {
 	const [article, setArticle] = useState('');
 	const [date, setDate] = useState('');
 	const [isLoading, setIsLoading] = useState('');
@@ -50,7 +51,6 @@ function Article({ setCurrentTopic }) {
 						/>
 					</div>
 					<TopicButton
-						setCurrentTopic={setCurrentTopic}
 						topic={article.topic}
 					/>
 					<img src={article.article_img_url} className="article-img" />

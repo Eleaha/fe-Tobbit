@@ -47,8 +47,8 @@ function SortArticles({ setSortCategory, setOrder }) {
 
 SortArticles.propTypes =
 {
-	setSortCategory: PropTypes.func.isRequired,
-	setOrder: PropTypes.func.isRequired
+	setSortCategory: PropTypes.func,
+	setOrder: PropTypes.func
 }
 
 export default SortArticles;
