@@ -17,9 +17,6 @@ function Topics() {
         {topics.map((topic) => (
             <TopicButton
                 key={topic.slug}
-                // setViewTopics={setViewTopics}
-                // setCurrentTopic={setCurrentTopic}
-                // currentTopic={currentTopic}
                 topic={topic.slug}
             />
         ))}

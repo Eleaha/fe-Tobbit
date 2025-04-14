@@ -1,5 +1,5 @@
 function LikedArticles() {
-    return <h1>Liked articles</h1>
+    return <h2>Liked articles</h2>;
 }
 
 export default LikedArticles;

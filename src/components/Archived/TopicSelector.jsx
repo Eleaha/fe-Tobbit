@@ -1,6 +1,6 @@
-import TopicButton from './TopicButton';
+import TopicButton from '../TopicButton';
 import { useState, useEffect } from 'react';
-import { getTopics } from '../../api';
+import { getTopics } from '../../../api';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
