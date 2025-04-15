@@ -84,10 +84,29 @@ button {
 
 .card {
     box-sizing: border-box;
-    padding: 1rem;
+    padding: var(--standard-padding);
     background-color: var(--main-light);
     margin: 0.5rem auto;
     border-radius: 1rem;
     list-style: none;
     box-shadow: 0.1rem 0.01rem 10px var(--main-dark);
+}
+
+.like-or-dislike-symbol {
+    color: var(--like-color);
+    font-size: 2.5rem;
+    margin: 0 0.3rem;
+}
+
+.outlined {
+    font-variation-settings: "FILL" 0, "wght" 300, "GRAD" 0, "opsz" 24;
+}
+
+.filled {
+    font-variation-settings: "FILL" 1, "wght" 300, "GRAD" 0, "opsz" 24;
+}
+
+.comment-count-symbol {
+    font-size: 2.5rem;
+    margin: 0 0.3rem;
 }

@@ -7,7 +7,6 @@
 .article-card:hover {
 	background-color: var(--main-dark);
 	transition: 0.5s;
-
 }
 
 .article-card-votes {

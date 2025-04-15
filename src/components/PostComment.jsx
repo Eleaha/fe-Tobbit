@@ -21,7 +21,7 @@ function PostComment({ setComments }) {
 			setValidForm(false);
 		} else {
 			const commentToPost = {
-				username: user,
+				username: user.username,
 				body: e.target[0].value,
 			};
 

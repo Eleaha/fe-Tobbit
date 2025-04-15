@@ -20,7 +20,7 @@ function CommentCard({ comments, setComments, comment }) {
 					id={comment.comment_id}
 					patchFunction={patchVotesByCommentId}
 				/>
-				{user === comment.author && (
+				{user.username === comment.author && (
 					<DeleteComment
 						comments={comments}
 						setComments={setComments}

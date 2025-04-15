@@ -5,7 +5,6 @@ import PropTypes from "prop-types";
 import Loading from "../Loading";
 import ArticleList from "../ArticleList";
 import ErrorPage from "./ErrorPage";
-import "../../styling/Articles.css";
 
 function Articles() {
     const [isLoading, setIsLoading] = useState(false);
