@@ -34,8 +34,7 @@ function PostComment({ setComments }) {
                         return [data.comment, ...current];
                     });
                 })
-                .catch((e) => {
-                    console.log(e);
+                .catch(() => {
                     setIsPosting(false);
                     setIsError(true);
                 });

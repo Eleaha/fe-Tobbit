@@ -7,7 +7,6 @@ function formatPreviewText(text, nWords) {
     if (nWords === 0) {
         return "";
     }
-    console.log(nWords)
     return text.split(" ").length < nWords
         ? text
         : text.split(" ").slice(0, nWords).join(" ") + "...";

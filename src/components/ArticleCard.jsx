@@ -1,27 +1,34 @@
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { formatPreviewText, timestampToDate } from "../utils/utils";
-import { useEffect, useState } from "react";
+import { getArticleById, getUser } from "../utils/api-interactions";
 import PropTypes from "prop-types";
 import "../styling/ArticleCard.css";
-import { getArticleById } from "../utils/api-interactions";
+import PlaceholderAvatar from "./PlaceholderAvatar";
 
 function ArticleCard({ article }) {
     const [previewText, setPreviewText] = useState(null);
+    const [authorAvatarUrl, setAuthorAvatarUrl] = useState();
 
     useEffect(() => {
-        if (!article.article_img_url) {
-            getArticleById(article.article_id).then(({ data }) => {
-                console.log(formatPreviewText(data.article.body));
-                setPreviewText(formatPreviewText(data.article.body, 50));
-            });
-        }
+        getArticleById(article.article_id).then(({ data }) => {
+            article.article_img_url
+                ? setPreviewText(formatPreviewText(data.article.body, 35))
+                : setPreviewText(formatPreviewText(data.article.body, 70));
+        });
+        getUser(article.author).then(({ data }) => {
+            setAuthorAvatarUrl(data.user.avatar_url);
+        });
     });
 
     return (
         <Link to={`/article/${article.article_id}`} className="link">
             <div className="article-card card">
                 <h1>{article.title}</h1>
-                <h2>{article.author}</h2>
+                <div className="author-wrapper">
+                    {authorAvatarUrl ? <img src={authorAvatarUrl} className="avatar"/> : <PlaceholderAvatar/>}
+                    <h2>{article.author}</h2>
+                </div>
                 <h3>{timestampToDate(article.created_at)}</h3>
                 <div className="article-card-votes">
                     <p>{article.votes}</p>
@@ -31,10 +38,8 @@ function ArticleCard({ article }) {
                     <p>{article.comment_count}</p>
                     <span className="material-symbols-outlined comment-count-symbol">forum</span>
                 </div>
-                {!article.article_img_url ? <p>{previewText}</p> : null}
-                <div className="article-img-wrapper">
-                    <img className="article-img" src={article.article_img_url} />
-                </div>
+                    {article.article_img_url  && <img className="article-img" src={article.article_img_url} />}
+                <p>{previewText}</p>
             </div>
         </Link>
     );
