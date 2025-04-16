@@ -45,6 +45,16 @@
 	width: var(--card-width);
 }
 
+.comment-input {
+    padding: var(--standard-padding);
+    border-radius: 1rem;
+    margin: 0.5rem 0;
+    height: 6rem;
+    max-width: 100%;
+    min-width: 100%;
+    max-height: 30rem;
+}
+
 .comments-title {
     margin: var(--standard-padding) 0;
 }
@@ -53,13 +63,6 @@
     background-color: var(--accent-secondary-light);
     display: flex;
     flex-direction: column;
-}
-
-textarea {
-    width: var(--card-width);
-    padding: 10px;
-    border-radius: 1rem;
-    margin: 0.5rem 0;
 }
 
 #submit-comment-button {

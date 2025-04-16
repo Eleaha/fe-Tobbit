@@ -1,6 +1,5 @@
 import { useLocation, useNavigate } from "react-router-dom";
 import PropTypes from "prop-types";
-import "../styling/TopicButton.css";
 
 function TopicButton({ topic }) {
     const navigate = useNavigate();
@@ -16,7 +15,7 @@ function TopicButton({ topic }) {
         <button
             onClick={handleClick}
             className={
-                topic === params.get("topic") ? "topic-button selected-topic" : "topic-button"
+                topic === params.get("topic") ? "styled-button selected-topic" : "styled-button"
             }
         >
             {topic}
