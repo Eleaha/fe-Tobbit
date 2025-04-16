@@ -1,8 +1,8 @@
+import { useContext } from "react";
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
-import "../styling/Header.css";
-import { useContext } from "react";
 import { UserContext } from "../contexts/User";
+import "../styling/Header.css";
 
 function Header() {
     const { user } = useContext(UserContext);
@@ -11,12 +11,12 @@ function Header() {
             <Link to="/articles" className="link">
                 <h1>Tobbit</h1>
             </Link>
-            {user ? (
+            {user && (
                 <div className="header-user-info-wrapper">
                     <p>{user.username}</p>
                     <img className="header-profile-pic" src={user.avatar_url} />
                 </div>
-            ) : null}
+            )}
         </header>
     );
 }

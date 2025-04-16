@@ -1,8 +1,8 @@
 import { useContext, useState } from "react";
-import { timestampToDate } from "../utils/utils";
+import PropTypes from "prop-types";
 import { deleteComment, patchVotesByCommentId } from "../utils/api-interactions";
 import { UserContext } from "../contexts/User";
-import PropTypes from "prop-types";
+import { timestampToDate } from "../utils/utils";
 import Votes from "./Votes";
 import ConfirmDelete from "./ConfirmDelete";
 

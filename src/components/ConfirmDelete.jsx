@@ -1,5 +1,5 @@
-import PropTypes from "prop-types";
 import { useState } from "react";
+import PropTypes from "prop-types";
 import "../styling/ConfirmDelete.css";
 
 function ConfirmDelete({ setShowDeleteConfirm, itemId, deleteFunc }) {
@@ -12,7 +12,6 @@ function ConfirmDelete({ setShowDeleteConfirm, itemId, deleteFunc }) {
         });
     }
 
-    
     return (
         <div className="confirm-delete">
             <p>Are you sure you want to delete this?</p>

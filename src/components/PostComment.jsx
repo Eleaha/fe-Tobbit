@@ -1,7 +1,7 @@
 import { useState, useContext } from "react";
 import { useParams } from "react-router-dom";
-import { postComment } from "../utils/api-interactions";
 import { UserContext } from "../contexts/User";
+import { postComment } from "../utils/api-interactions";
 import PropTypes from "prop-types";
 
 function PostComment({ setComments }) {

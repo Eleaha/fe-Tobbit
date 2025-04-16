@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
-import { getArticles } from "../../utils/api-interactions";
 import PropTypes from "prop-types";
+import { getArticles } from "../../utils/api-interactions";
 import Loading from "../Loading";
 import ArticleList from "../ArticleList";
 import ErrorPage from "./ErrorPage";

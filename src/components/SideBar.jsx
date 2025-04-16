@@ -9,7 +9,7 @@ function SideBar() {
                 <h2>Browse by topic</h2>
                 <Topics />
             </div>
-            {location.pathname.startsWith("/article/") ? null : (
+            {!location.pathname.startsWith("/article/") && (
                 <div className="side-bar-content-wrapper">
                     <h2>Sort</h2>
                     <SortArticles />

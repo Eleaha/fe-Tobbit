@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { formatPreviewText, timestampToDate } from "../utils/utils";
-import { getArticleById, getUser } from "../utils/api-interactions";
 import PropTypes from "prop-types";
-import "../styling/ArticleCard.css";
+import { getArticleById, getUser } from "../utils/api-interactions";
+import { formatPreviewText, timestampToDate } from "../utils/utils";
 import PlaceholderAvatar from "./PlaceholderAvatar";
+import "../styling/ArticleCard.css";
 
 function ArticleCard({ article }) {
     const [previewText, setPreviewText] = useState(null);
@@ -26,7 +26,11 @@ function ArticleCard({ article }) {
             <div className="article-card card">
                 <h1>{article.title}</h1>
                 <div className="author-wrapper">
-                    {authorAvatarUrl ? <img src={authorAvatarUrl} className="avatar"/> : <PlaceholderAvatar/>}
+                    {authorAvatarUrl ? (
+                        <img src={authorAvatarUrl} className="avatar" />
+                    ) : (
+                        <PlaceholderAvatar />
+                    )}
                     <h2>{article.author}</h2>
                 </div>
                 <h3>{timestampToDate(article.created_at)}</h3>
@@ -38,7 +42,9 @@ function ArticleCard({ article }) {
                     <p>{article.comment_count}</p>
                     <span className="material-symbols-outlined comment-count-symbol">forum</span>
                 </div>
-                    {article.article_img_url  && <img className="article-img" src={article.article_img_url} />}
+                {article.article_img_url && (
+                    <img className="article-img" src={article.article_img_url} />
+                )}
                 <p>{previewText}</p>
             </div>
         </Link>

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import { getCommentsByArticleID } from "../utils/api-interactions";
 import PropTypes from "prop-types";
+import { getCommentsByArticleID } from "../utils/api-interactions";
 import CommentCard from "./CommentCard";
 import PostComment from "./PostComment";
 
