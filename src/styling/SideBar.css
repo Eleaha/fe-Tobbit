@@ -2,10 +2,17 @@
     position: fixed;
     width: var(--side-bar-width);
     height: 100vh;
-	padding: 0 var(--standard-padding) var(--standard-padding) var(--standard-padding);
-	border-right: 0.4rem dotted var(--text-dark);
+    padding: var(--small-padding) var(--standard-padding);
+    border-right: 0.4rem dotted var(--text-dark);
 }
 
 .side-bar-content-wrapper {
     margin-bottom: var(--standard-padding);
+}
+
+.topic-container {
+    margin-top: var(--small-padding);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
 }

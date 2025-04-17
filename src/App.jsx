@@ -1,4 +1,4 @@
-import { Routes, Route, useLocation } from 'react-router';
+import { Routes, Route, useLocation, Navigate } from 'react-router';
 import { useLayoutEffect } from 'react';
 import Articles from './components/Pages/Articles';
 import Article from './components/Pages/Article';
@@ -20,6 +20,7 @@ function App() {
 			<main>
 				<SideBar />
 				<Routes>
+					<Route path="/" element={<Navigate to="/articles" />}/>
 					<Route path="/articles" element={<Articles />} />
 					<Route
 						path="/article/:article_id"

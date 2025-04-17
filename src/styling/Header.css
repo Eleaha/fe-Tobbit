@@ -2,7 +2,7 @@ header {
     position: fixed;
     top: 0;
     height: var(--header-height);
-    width: 100vw;
+    width: 100%;
     padding: 10px calc(var(--standard-padding) * 2) 10px var(--standard-padding);
     background-color: var(--main-dark);
     color: var(--text-dark);
@@ -22,13 +22,15 @@ header h1 {
 }
 
 .header-profile-pic {
-    height: calc(var(--header-height) - var(--standard-padding));
-    width: calc(var(--header-height) - var(--standard-padding));
-    border-radius: 100%;
+    width: 35px;
+    height: 35px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 50%;
 }
 
 .header-user-info-wrapper {
     display: flex;
     align-items: center;
-    gap: 0.5rem;
+    gap: var(--small-padding);
 }

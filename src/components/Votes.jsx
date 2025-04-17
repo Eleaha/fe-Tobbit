@@ -1,7 +1,8 @@
 import { useState } from "react";
 import PropTypes from "prop-types";
+import "../styling/Votes.css"
 
-function Votes({ votes, id, patchFunction }) {
+function Votes({ votes, id, patchFunc }) {
     const [liked, setIsLiked] = useState(false);
     const [disliked, setDisliked] = useState(false);
     const [likeFill, setLikeFill] = useState("outlined");
@@ -10,7 +11,7 @@ function Votes({ votes, id, patchFunction }) {
     const [error, setError] = useState(false);
 
     function handlePatch(votes) {
-        patchFunction(votes, id).catch(() => {
+        patchFunc(votes, id).catch(() => {
             setError(true);
             setVoteCount((current) => current - votes);
         });
@@ -81,7 +82,7 @@ function Votes({ votes, id, patchFunction }) {
 Votes.propTypes = {
     votes: PropTypes.number,
     id: PropTypes.number,
-    patchFunction: PropTypes.func,
+    patchFunc: PropTypes.func,
 };
 
 export default Votes;

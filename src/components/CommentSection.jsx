@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import { getCommentsByArticleID } from "../utils/api-interactions";
 import CommentCard from "./CommentCard";
 import PostComment from "./PostComment";
+import "../styling/CommentSection.css"
 
 function CommentSection({ articleId }) {
     const [comments, setComments] = useState([]);

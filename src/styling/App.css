@@ -4,6 +4,7 @@
     --accent-dark: #ffb3b3;
     --accent-secondary-light: #f8c596;
     --main-dark: #c5d86d;
+    --main-dark-sheer: #c5d86dcc;
     --main-light: #eff9c1;
     --like-color: #e6745b;
 
@@ -13,7 +14,9 @@
     --side-bar-width: 250px;
     --card-width: 800px;
     --header-height: 50px;
-    --standard-padding: 15px;
+    --standard-padding: 16px;
+    --small-padding: 6px;
+    --tiny-padding: 3px;
 }
 
 * {
@@ -26,6 +29,7 @@
 
 html {
     background-color: var(--main-light);
+    height: 100vh;
 }
 
 main {
@@ -36,9 +40,9 @@ main {
 
 h1 {
     font-family: var(--serif);
-    font-size: 1.8rem;
+    font-size: 2.2rem;
     font-weight: 800;
-    line-height: 2rem;
+    line-height: 2.4rem;
 }
 
 h2 {
@@ -63,17 +67,16 @@ button {
     color: var(--text-dark);
     background-color: transparent;
     font-family: var(--sans-serif);
-    border-radius: 0.4rem;
+    border-radius: 6px;
     font-weight: 500;
     padding: 0.5rem;
     transition: 0.3s;
 }
 
 .styled-button {
-    font-size: 1rem;
+    font-size: 16px;
     background: var(--text-dark);
     color: var(--accent-light);
-    margin: 0.1rem;
 }
 
 .styled-button:hover {
@@ -101,30 +104,10 @@ button {
     position: relative;
     box-sizing: border-box;
     padding: var(--standard-padding);
-    background-color: var(--main-light);
-    margin: 0.5rem auto;
-    border-radius: 1rem;
+    margin: var(--standard-padding) auto;
+    border-radius: 16px;
     list-style: none;
     box-shadow: 0.1rem 0.01rem 10px var(--main-dark);
-}
-
-.like-or-dislike-symbol {
-    color: var(--like-color);
-    font-size: 2.5rem;
-    margin: 0 0.3rem;
-}
-
-.outlined {
-    font-variation-settings: "FILL" 0, "wght" 300, "GRAD" 0, "opsz" 24;
-}
-
-.filled {
-    font-variation-settings: "FILL" 1, "wght" 300, "GRAD" 0, "opsz" 24;
-}
-
-.comment-count-symbol {
-    font-size: 2.5rem;
-    margin: 0 0.3rem;
 }
 
 .avatar {
@@ -132,15 +115,11 @@ button {
     height: 35px;
     object-fit: cover;
     object-position: center;
-    border-radius: 100%;
+    border-radius: 50%;
 }
 
 .default-avatar {
-    font-size: 38px;
-}
-
-.author-wrapper {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
+    font-size: 43px;
+    margin-top: -4px;
+    margin-left: -4px;
 }

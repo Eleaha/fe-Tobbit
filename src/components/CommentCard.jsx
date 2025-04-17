@@ -12,7 +12,7 @@ function CommentCard({ comment }) {
     const { user } = useContext(UserContext);
 
     return (
-        <li className="comment-card card">
+        <li className="card comment-card">
             <h2>{comment.author}</h2>
             <h3>{timestampToDate(comment.created_at)}</h3>
             <p>{comment.body}</p>
