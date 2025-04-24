@@ -1,5 +1,5 @@
 .article {
-    width: var(--card-width);
+    max-width: var(--card-width);
     margin: auto;
 }
 

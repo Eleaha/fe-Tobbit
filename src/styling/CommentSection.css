@@ -1,6 +1,7 @@
 .comment-section {
     border-top: 0.4rem dotted var(--text-dark);
-	width: var(--card-width);
+	width: 100%;
+	max-width: var(--card-width);
 }
 
 .comments-title {
@@ -17,9 +18,9 @@
     padding: var(--standard-padding);
     border-radius: 16px;
     margin: 0.5rem 0;
-    height: 6rem;
-    max-width: 100%;
     min-width: 100%;
+    max-width: 100%;
+    min-height: 6rem;
     max-height: 30rem;
 }
 

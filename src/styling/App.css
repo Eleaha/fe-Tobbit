@@ -1,3 +1,5 @@
+/* General styling accross universal components and media queries */
+
 :root {
     --text-dark: #220c72;
     --accent-light: #fffdfb;
@@ -98,13 +100,14 @@ button {
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: var(--standard-padding)
 }
 
 .card {
     position: relative;
     box-sizing: border-box;
     padding: var(--standard-padding);
-    margin: var(--standard-padding) auto;
+    margin: var(--standard-padding) 0;
     border-radius: 16px;
     list-style: none;
     box-shadow: 0.1rem 0.01rem 10px var(--main-dark);
@@ -122,4 +125,58 @@ button {
     font-size: 43px;
     margin-top: -4px;
     margin-left: -4px;
+}
+
+@media (max-width: 1100px) {
+    :root {
+        --standard-padding: 14px;
+    }
+
+    main {
+        display: block;
+    }
+
+    .menu-button {
+        display: block;
+    }
+
+    #browse-bar {
+        position: fixed;
+        width: 100%;
+        height: auto;
+        padding-top: calc(var(--header-height) + var(--standard-padding));
+        border-right: none;
+        background-color: var(--main-dark-sheer);
+        border-radius: 16px;
+        z-index: 50;
+        backdrop-filter: blur(3px);
+        -webkit-backdrop-filter: blur(3px);
+        box-shadow: 0 0.01rem 10px rgba(21, 13, 51, 30%);
+        transition-duration: 0.6s;
+    }
+
+    .hide-browse-bar {
+        top: -80vh;
+    }
+
+    .show-browse-bar {
+        top: 0;
+    }
+
+    .menu-toggle-icon {
+        display: block;
+    }
+
+    button {
+        padding: 0.8rem;
+    }
+}
+
+@media (max-width: 600px) {
+    :root {
+        --standard-padding: 12px;
+    }
+    button {
+        padding: 1rem;
+    }
 }

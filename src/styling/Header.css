@@ -21,6 +21,16 @@ header h1 {
     cursor: pointer;
 }
 
+.left-header-content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.menu-button {
+    display: none;
+}
+
 .header-profile-pic {
     width: 35px;
     height: 35px;
@@ -33,4 +43,9 @@ header h1 {
     display: flex;
     align-items: center;
     gap: var(--small-padding);
+}
+
+.menu-toggle-icon {
+    display: none;
+    font-size: 30px;
 }

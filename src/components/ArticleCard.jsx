@@ -19,7 +19,7 @@ function ArticleCard({ article }) {
         getUser(article.author).then(({ data }) => {
             setAuthorAvatarUrl(data.user.avatar_url);
         });
-    });
+    }, [article]);
 
     return (
         <Link to={`/article/${article.article_id}`} className="link">

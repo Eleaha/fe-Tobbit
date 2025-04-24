@@ -1,7 +1,11 @@
 import { useLocation, useNavigate } from "react-router-dom";
 import PropTypes from "prop-types";
+import { useContext } from "react";
+import { ViewBrowseBarContext } from "../contexts/ViewBrowseBar";
 
 function TopicButton({ topic }) {
+    const { viewBrowseBar, setViewBrowseBar } = useContext(ViewBrowseBarContext);
+
     const navigate = useNavigate();
     const location = useLocation();
     const params = new URLSearchParams(location.search);
@@ -9,6 +13,7 @@ function TopicButton({ topic }) {
     function handleClick() {
         params.set("topic", topic);
         navigate(`/articles?${params.toString()}`, { replace: false });
+        setViewBrowseBar(!viewBrowseBar);
     }
 
     return (
