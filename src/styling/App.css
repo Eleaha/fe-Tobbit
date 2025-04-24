@@ -1,0 +1,182 @@
+/* General styling accross universal components and media queries */
+
+:root {
+    --text-dark: #220c72;
+    --accent-light: #fffdfb;
+    --accent-dark: #ffb3b3;
+    --accent-secondary-light: #f8c596;
+    --main-dark: #c5d86d;
+    --main-dark-sheer: #c5d86dcc;
+    --main-light: #eff9c1;
+    --like-color: #e6745b;
+
+    --serif: "EB Garamond", serif;
+    --sans-serif: "Teachers", sans-serif;
+
+    --side-bar-width: 250px;
+    --card-width: 800px;
+    --header-height: 50px;
+    --standard-padding: 16px;
+    --small-padding: 6px;
+    --tiny-padding: 3px;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    font-size: 16px;
+    color: var(--text-dark);
+    box-sizing: border-box;
+}
+
+html {
+    background-color: var(--main-light);
+    height: 100vh;
+}
+
+main {
+    display: grid;
+    grid-template-columns: var(--side-bar-width) 1fr;
+    margin-top: 60px;
+}
+
+h1 {
+    font-family: var(--serif);
+    font-size: 2.2rem;
+    font-weight: 800;
+    line-height: 2.4rem;
+}
+
+h2 {
+    font-family: var(--sans-serif);
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1.5rem;
+}
+
+h3 {
+    font-family: var(--sans-serif);
+}
+
+p {
+    font-family: var(--sans-serif);
+    font-weight: 500;
+}
+
+button {
+    border: none;
+    cursor: pointer;
+    color: var(--text-dark);
+    background-color: transparent;
+    font-family: var(--sans-serif);
+    border-radius: 6px;
+    font-weight: 500;
+    padding: 0.5rem;
+    transition: 0.3s;
+}
+
+.styled-button {
+    font-size: 16px;
+    background: var(--text-dark);
+    color: var(--accent-light);
+}
+
+.styled-button:hover {
+    background-color: var(--accent-light);
+    color: var(--text-dark);
+}
+
+.styled-button:active {
+    box-shadow: inset 0 4px 4px var(--text-dark);
+    transition: none;
+}
+
+.link {
+    text-decoration: none;
+}
+
+.route {
+    grid-column-start: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: var(--standard-padding)
+}
+
+.card {
+    position: relative;
+    box-sizing: border-box;
+    padding: var(--standard-padding);
+    margin: var(--standard-padding) 0;
+    border-radius: 16px;
+    list-style: none;
+    box-shadow: 0.1rem 0.01rem 10px var(--main-dark);
+}
+
+.avatar {
+    width: 35px;
+    height: 35px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 50%;
+}
+
+.default-avatar {
+    font-size: 43px;
+    margin-top: -4px;
+    margin-left: -4px;
+}
+
+@media (max-width: 1100px) {
+    :root {
+        --standard-padding: 14px;
+    }
+
+    main {
+        display: block;
+    }
+
+    .menu-button {
+        display: block;
+    }
+
+    #browse-bar {
+        position: fixed;
+        width: 100%;
+        height: auto;
+        padding-top: calc(var(--header-height) + var(--standard-padding));
+        border-right: none;
+        background-color: var(--main-dark-sheer);
+        border-radius: 16px;
+        z-index: 50;
+        backdrop-filter: blur(3px);
+        -webkit-backdrop-filter: blur(3px);
+        box-shadow: 0 0.01rem 10px rgba(21, 13, 51, 30%);
+        transition-duration: 0.6s;
+    }
+
+    .hide-browse-bar {
+        top: -80vh;
+    }
+
+    .show-browse-bar {
+        top: 0;
+    }
+
+    .menu-toggle-icon {
+        display: block;
+    }
+
+    button {
+        padding: 0.8rem;
+    }
+}
+
+@media (max-width: 600px) {
+    :root {
+        --standard-padding: 12px;
+    }
+    button {
+        padding: 1rem;
+    }
+}

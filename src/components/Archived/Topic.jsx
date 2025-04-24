@@ -1,11 +1,11 @@
 import { useEffect, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
-import { getArticles } from '../../api';
+import { getArticles } from '../../../api';
 import PropTypes from 'prop-types';
-import Loading from './Loading';
-import ArticleList from './ArticleList';
-import SortArticles from './SortArticles';
-import ErrorPage from './Pages/ErrorPage';
+import Loading from '../Loading';
+import ArticleList from '../ArticleList';
+import SortArticles from '../SortArticles';
+import ErrorPage from '../Pages/ErrorPage';
 
 
 function Topic({ currentTopic, setCurrentTopic }) {
@@ -35,7 +35,7 @@ function Topic({ currentTopic, setCurrentTopic }) {
 			console.log(err.response.data.msg)
 			setError(err.response)
 		})
-	}, [currentTopic, searchParams, order, sortCategory]);
+	}, []);
 
 	const topicTitle =
 		currentTopic.charAt(0).toUpperCase() + currentTopic.substring(1);

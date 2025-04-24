@@ -1,3 +1,10 @@
+/* media break points */
+/* mobile - up to 480px
+medium - tablets - 768
+desktop 1025 and over 
+
+use a grid, but change which rows and colums are taken up at sifferent widths*/
+
 :root {
 	--text-dark: #220c72;
 	--accent-light: #fffdfb;
@@ -86,7 +93,7 @@ button {
 	font-family: var(--sans-serif);
 	border-radius: 0.4rem;
 	font-weight: 500;
-	padding: 0.5rem;
+	padding: 0.3rem;
 	transition: 0.3s;
 }
 
@@ -110,7 +117,6 @@ header button:active {
 	font-size: 3rem;
 	padding-bottom: 1rem;
 	margin-bottom: 1rem;
-	border-bottom: 0.5rem dotted var(--text-dark);
 }
 
 .sort-container {

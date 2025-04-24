@@ -1,0 +1,51 @@
+header {
+    position: fixed;
+    top: 0;
+    height: var(--header-height);
+    width: 100%;
+    padding: 10px calc(var(--standard-padding) * 2) 10px var(--standard-padding);
+    background-color: var(--main-dark);
+    color: var(--text-dark);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 0.01rem 10px rgba(21, 13, 51, 30%);
+    z-index: 100;
+}
+
+header h1 {
+    font-family: var(--serif);
+    font-weight: 700;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+.left-header-content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.menu-button {
+    display: none;
+}
+
+.header-profile-pic {
+    width: 35px;
+    height: 35px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 50%;
+}
+
+.header-user-info-wrapper {
+    display: flex;
+    align-items: center;
+    gap: var(--small-padding);
+}
+
+.menu-toggle-icon {
+    display: none;
+    font-size: 30px;
+}

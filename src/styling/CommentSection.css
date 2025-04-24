@@ -1,0 +1,59 @@
+.comment-section {
+    border-top: 0.4rem dotted var(--text-dark);
+	width: 100%;
+	max-width: var(--card-width);
+}
+
+.comments-title {
+    margin: var(--standard-padding) 0;
+}
+
+.submit-comment-card {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--main-dark);
+}
+
+.comment-input {
+    padding: var(--standard-padding);
+    border-radius: 16px;
+    margin: 0.5rem 0;
+    min-width: 100%;
+    max-width: 100%;
+    min-height: 6rem;
+    max-height: 30rem;
+}
+
+#submit-comment-button {
+    background-color: var(--text-dark);
+    color: var(--accent-light);
+    margin: auto;
+    padding: 0.5rem 4rem;
+}
+
+#submit-comment-button:hover {
+    background-color: var(--accent-light);
+    color: var(--text-dark);
+}
+
+#submit-comment-button:active {
+    box-shadow: inset 0 4px 4px var(--text-dark);
+    transition: none;
+}
+
+.delete-comment-button {
+    height: 2.5rem;
+    padding: 0;
+}
+
+.comment-card-bottom {
+    height: 3rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.trash-icon {
+    font-size: 2.5rem;
+}
